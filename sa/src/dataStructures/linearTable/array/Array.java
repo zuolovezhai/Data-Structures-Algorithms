@@ -78,8 +78,8 @@ public class Array {
 		System.out.println();
 	}
 	public static void main(String[] args) {
-		Array array = new Array(5);
-		array.printAll();
+	Array array = new Array(5);
+	array.printAll();
         array.insert(0, 3);
         array.insert(0, 4);
         array.insert(1, 5);
