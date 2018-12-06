@@ -8,8 +8,20 @@ package dataStructures.linearTable.linkedlist;
  */
 public class SinglyLinkedList {
 	
-	private Node head = null;
+	public Node head = null;
+	//链表中元素的个数
+	public int count = 0;
 	
+	
+	
+	public Node getHead() {
+		return head;
+	}
+
+	public int getCount() {
+		return count;
+	}
+
 	/**
 	 * 按照value查找
 	 * @param value
@@ -55,6 +67,7 @@ public class SinglyLinkedList {
 			node.next = head;
 			head = node;
 		}
+		count++;
 	}
 	
 	public void insertToTail(int value) {
@@ -73,6 +86,7 @@ public class SinglyLinkedList {
 			}
 			p.next = node;
 		}
+		count++;
 	}
 	
 	
@@ -91,6 +105,7 @@ public class SinglyLinkedList {
 		if (p == null) return;
 		node.next = p.next;
 		p.next = node;
+		count++;
 	}
 	
 	/**
@@ -121,12 +136,14 @@ public class SinglyLinkedList {
 		
 		node.next = q;
 		q.next = node;
+		count++;
 	}
 	
 	public void deleteByNode(Node node) {
 		if (node == null || head == null) return;
 		if (node == head) {
 			head = null;
+			count--;
 			return;
 		} 
 		Node p = head;
@@ -157,6 +174,7 @@ public class SinglyLinkedList {
 		} else {
 			q.next = p.next;
 		}
+		count--;
 	}
 	
 	
@@ -263,7 +281,6 @@ public class SinglyLinkedList {
 			p = p.next;
 		}
 	}
-	
 
 	/**
 	 * 链表中的节点
@@ -272,8 +289,8 @@ public class SinglyLinkedList {
 	 * @Description TODO
 	 */
 	public static class Node {
-		private int data;
-		private Node next;
+		public int data;
+		public Node next;
 		
 		public Node(int data, Node next) {
 			super();
