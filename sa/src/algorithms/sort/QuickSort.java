@@ -2,10 +2,16 @@ package algorithms.sort;
 
 /**
  * 快速排序
+ * 时间复杂度O(nlogn)
+ * 最坏时间复杂度O(n*n) 1,2,3,4,5,6,7,8
+ * 原地排序
+ * 非稳定排序算法
+ *
+ *
  */
 public class QuickSort {
     public static void main(String[] args) {
-        int[] data = new int[]{1,2,3,4,5,7,6,5,4,3,2,23,12};
+        int[] data = new int[]{1,2,3,34,4,5,7,6,5,4,3,2,23,12};
         quickSort(data, 0, data.length - 1);
         printAll(data);
     }
